@@ -28,7 +28,7 @@ const airportReg=()=>{
         "city":city,
         "country":country
     };
-    let url="http://localhost:4000/airportInfo";
+    let url="https://flightbookingdatalive.vercel.app/airportInfo";
     let method={
       method: "POST", // Send a POST request to create a new product
       header: {

@@ -18,7 +18,7 @@ function logincredentialscheck(){
 // show airline data
 const showAirline = async () => {
   try {
-    const response = await fetch('http://localhost:4000/airlines');
+    const response = await fetch('https://flightbookingdatalive.vercel.app/airlines');
     const data = await response.json();
     const airlinesData = document.getElementById('airlines-data');
     data.forEach(airline => {
@@ -51,7 +51,7 @@ const showAirline = async () => {
 // show edit form
 const showEditForm = async (id) => {
   try {
-    const response = await fetch(`http://localhost:4000/airlines/${id}`);
+    const response = await fetch(`https://flightbookingdatalive.vercel.app/airlines/${id}`);
     const airline = await response.json();
 
     const form = document.getElementById('airline-form');
@@ -104,7 +104,7 @@ const airlineReg = async (id, name, iata_code, country) => {
   try {
     if (id) {
       // Update existing airline
-      const response = await fetch(`http://localhost:4000/airlines/${id}`, {
+      const response = await fetch(`https://flightbookingdatalive.vercel.app/airlines/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -123,7 +123,7 @@ const airlineReg = async (id, name, iata_code, country) => {
       }
     } else {
       // Create new airline
-      const response = await fetch('http://localhost:4000/airlines', {
+      const response = await fetch('https://flightbookingdatalive.vercel.app/airlines', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -151,7 +151,7 @@ const airlineReg = async (id, name, iata_code, country) => {
 const del = async (id) => {
   try {
     console.log(`Deleting airline with ID ${id}`);
-    const response = await fetch(`http://localhost:4000/airlines/${id}`, {
+    const response = await fetch(`https://flightbookingdatalive.vercel.app/airlines/${id}`, {
       method: 'DELETE'
     });
     console.log(`Response status: ${response.status}`);
@@ -176,7 +176,7 @@ const del = async (id) => {
 const upd = async (id) => {
   try {
     // Get the airline data from the API
-    const response = await fetch(`http://localhost:4000/airlines/${id}`);
+    const response = await fetch(`https://flightbookingdatalive.vercel.app/airlines/${id}`);
     const airlineData = await response.json();
     
     // Create a form to update the airline data
@@ -202,7 +202,7 @@ const upd = async (id) => {
       };
       
       try {
-        const response = await fetch(`http://localhost:4000/airlines/${id}`, {
+        const response = await fetch(`https://flightbookingdatalive.vercel.app/airlines/${id}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(updatedAirlineData)

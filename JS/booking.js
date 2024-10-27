@@ -23,7 +23,7 @@ function logout() {
     let loginInfo = JSON.parse(localStorage.getItem("logininfo"));
 
     let url =
-      "http://localhost:4000/bookings";
+      "https://flightbookingdatalive.vercel.app/bookings";
 
     let data = await fetch(url);
     let response = await data.json();
@@ -104,7 +104,7 @@ function handleEditClick(bookingId) {
 
   // Get the booking data from the API
   fetch(
-    `http://localhost:4000/bookings/${bookingId}`
+    `https://flightbookingdatalive.vercel.app/bookings/${bookingId}`
   )
     .then((response) => response.json())
     .then((bookingData) => {
@@ -149,7 +149,7 @@ function handleEditClick(bookingId) {
 
         // Make a PATCH request to the API to update the booking data
         fetch(
-          `http://localhost:4000/bookings/${bookingId}`,
+          `https://flightbookingdatalive.vercel.app/bookings/${bookingId}`,
           {
             method: "PATCH",
             headers: {
@@ -219,7 +219,7 @@ async function deleteBooking(bookingId) {
   try {
     // Make a DELETE request to the API to delete the booking
     const response = await fetch(
-      `http://localhost:4000/bookings/${bookingId}`,
+      `https://flightbookingdatalive.vercel.app/bookings/${bookingId}`,
       {
         method: "DELETE",
       }

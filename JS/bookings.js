@@ -100,7 +100,7 @@ function bookFlight(){
   };
 
   setTimeout(() => {
-    fetch('http://localhost:4000/bookings', {
+    fetch('https://flightbookingdatalive.vercel.app/bookings', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

@@ -21,7 +21,7 @@ function logincredentialscheck(){
 
   const showFlights = async () => {
     try {
-      const response = await fetch('http://localhost:4000/flights');
+      const response = await fetch('https://flightbookingdatalive.vercel.app/flights');
       const data = await response.json();
       const flightsData = document.getElementById('flights-data');
       data.forEach(flight => {
@@ -87,7 +87,7 @@ durationMinutes.addEventListener('change', updateDuration);
 
 //airline show function iifi
 (async function () {
-    let url = "http://localhost:4000/airlines";
+    let url = "https://flightbookingdatalive.vercel.app/airlines";
   
     let data = await fetch(url);
   
@@ -113,7 +113,7 @@ durationMinutes.addEventListener('change', updateDuration);
   // Airport show function iifi for departure
 
   (async function () {
-    let url = "http://localhost:4000/airportInfo";
+    let url = "https://flightbookingdatalive.vercel.app/airportInfo";
   
     let data = await fetch(url);
   
@@ -136,7 +136,7 @@ durationMinutes.addEventListener('change', updateDuration);
     // Airport show function iifi for arrival
 
     (async function () {
-        let url = "http://localhost:4000/airportInfo";
+        let url = "https://flightbookingdatalive.vercel.app/airportInfo";
       
         let data = await fetch(url);
       
@@ -182,7 +182,7 @@ durationMinutes.addEventListener('change', updateDuration);
         "price": price
       };
     
-      let url = "http://localhost:4000/flights";
+      let url = "https://flightbookingdatalive.vercel.app/flights";
       let method = {
         method: "POST", // Send a POST request to create a new flight
         headers: {

@@ -31,7 +31,7 @@ const customerreg=()=>{
     "address":address,
     "password":password
   };
-  let url="http://localhost:4000/customers";
+  let url="https://flightbookingdatalive.vercel.app/customers";
   let method={
     method: "POST", // Send a POST request to create a new product
     header: {

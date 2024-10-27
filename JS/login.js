@@ -2,7 +2,7 @@ const dashboardCustomer = async () => {
   localStorage.setItem('loginChecked', 'true');
 
   try {
-    const response = await fetch("http://localhost:4000/customers", {
+    const response = await fetch("https://flightbookingdatalive.vercel.app/customers", {
       mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ const dashboardCustomer = async () => {
     const password = passwordInput.value.trim();
   
     if (email && password) {
-      fetch("http://localhost:4000/Admin")
+      fetch("https://flightbookingdatalive.vercel.app/Admin")
         .then(response => response.json())
         .then(data => {
           const finddata = data.find((user) => user.email === email && user.password === password);
